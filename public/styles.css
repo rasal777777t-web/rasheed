@@ -1,0 +1,29 @@
+:root {
+  --bg: #0b0b12;
+  --fg: #e7e7f0;
+  --glass-bg: rgba(255,255,255,0.06);
+  --glass-bd: 1px solid rgba(255,255,255,0.18);
+  --glass-br: 16px;
+  --glow: 0 0 40px rgba(168,85,247,0.25), 0 0 80px rgba(59,130,246,0.2);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background:
+    radial-gradient(1200px 600px at 10% 10%, rgba(168,85,247,0.12), transparent 60%),
+    radial-gradient(1000px 500px at 80% 20%, rgba(59,130,246,0.12), transparent 60%),
+    radial-gradient(900px 500px at 50% 90%, rgba(236,72,153,0.12), transparent 60%),
+    var(--bg);
+  color: var(--fg);
+}
+
+.glass { background: var(--glass-bg); border: var(--glass-bd); border-radius: var(--glass-br); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
+.glow { box-shadow: var(--glow); }
+.text-gradient { background: linear-gradient(90deg, #60a5fa, #a78bfa, #f472b6); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+
+/* simple reveal animation */
+.reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
+.reveal.show { opacity: 1; transform: translateY(0); }
+
+
